@@ -102,7 +102,7 @@ async def izadji(ctx):
 async def change_status():
     await client.change_presence(activity=discord.Game(choice(statusi)))
 
-client.run('ODI4NDE0NjQ5NzQ5MjA5MDg5.YGpPQw.WovFEkanXIEQveJ6I867SfeVx2A')
+client.run('TOKEN') //replace token when running, dummy
 
 
 
