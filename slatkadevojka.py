@@ -7,7 +7,7 @@ import youtube_dl
 from random import choice
 
 client = commands.Bot(command_prefix='bebo ')
-statusi=['slusam losu muziku..', 'necu da ucim!', 'cekam da se mateja vrati kuci :c', 'tiltujem u valorantu', 'tekken sama u sobi']
+statusi=['slusam losu muziku..', 'necu da ucim!', 'tiltujem u valorantu']
 
 youtube_dl.utils.bug_reports_message = lambda: ''
 
@@ -58,23 +58,11 @@ async def on_ready():
     change_status.start()
     print("evo me!")
 
-@client.command(name='lgm', help='probaj pa vidi')
-async def lgm(ctx):
-    await ctx.send(f'looooooomi ga matke za {round(client.latency * 1000)}ms')
-
-@client.command(name='cao', help='pozdravi me')
-async def cao(ctx):
-    odgovori=['cao bebo!', 'ljubi te brat bebo', 'ostavi me na miru bebo :weary:', 'idemo po taj hleb bebo', 'gde si do sad bebo? :heart_eyes:']
-    await ctx.send(choice(odgovori))
 
 @client.command(name='git', help='moj github')
 async def git(ctx):
     await ctx.send('https://github.com/yazecchi :revolving_hearts:')
 
-@client.command(name='potd', help='person of the day')
-async def potd(ctx):
-    osobe=['olja','masa','ivana','nevena','stefke','ognjen','miksi','fedja','mateja']
-    await ctx.send(f'najbolja osoba danas je {choice(osobe)} :smiling_face_with_3_hearts: :kiss: :sparkles: ')
 
 @client.command(name='pusti', help='pusta pesmu')
 async def pusti(ctx, url):
@@ -102,7 +90,7 @@ async def izadji(ctx):
 async def change_status():
     await client.change_presence(activity=discord.Game(choice(statusi)))
 
-client.run('TOKEN') //replace token when running, dummy
+client.run('TOKEN') //replace token when running
 
 
 
